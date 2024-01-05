@@ -8,19 +8,11 @@ const SignUp = () => {
 
     const handleSignUp = (email, password) => {
         const auth = getAuth()
-        console.log(auth)
+        // console.log(auth)
         createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                console.log(userCredential)
-                // Signed up 
-                const user = userCredential.user;
-                // ...
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // ..
-            })
+            .then(res => console.log(res))
+            .catch(err => console.error(err))
+            
     }
 
     return (
